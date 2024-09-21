@@ -1,0 +1,143 @@
+/* Container styling */
+.ag-format-container {
+    width: 100%;
+    max-width: 1142px; /* Ensure the container doesn't exceed this width */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Body background color */
+  body {
+    background-color: #000; /* Set the background color to black */
+  }
+  
+  /* Flexbox layout for the cards */
+  .ag-courses_box {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    padding: 50px 0; /* Add padding to the top and bottom */
+  }
+  
+  /* Individual card styling */
+  .ag-courses_item {
+    flex-basis: calc(33.33333% - 30px); /* Three cards per row with margin adjustment */
+    margin: 0 15px 30px; /* Margin for spacing between cards */
+    border-radius: 28px; /* Rounded corners */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative; /* Position context for child elements */
+  }
+  
+  /* Card link styling */
+  .ag-courses-item_link {
+    display: block; /* Block-level for full width */
+    padding: 30px 20px; /* Padding inside the card */
+    background-color: #121212; /* Dark background for the card */
+    position: relative; /* Positioning context for child elements */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  /* Hover effects for card link */
+  .ag-courses-item_link:hover,
+  .ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none; /* Remove underline */
+    color: #FFF; /* Change text color on hover */
+  }
+  
+  /* Hover effect for the background circle */
+  .ag-courses-item_link:hover .ag-courses-item_bg {
+    transform: scale(10); /* Scale up the background circle */
+  }
+  
+  /* Title styling */
+  .ag-courses-item_title {
+    min-height: 87px; /* Minimum height for title */
+    margin: 0 0 25px; /* Margin below the title */
+    overflow: hidden; /* Hide overflowing text */
+    font-weight: bold; /* Bold text */
+    font-size: 30px; /* Large font size */
+    color: #FFF; /* White text color */
+    z-index: 2; /* Ensure title is above other elements */
+    position: relative; /* Relative positioning */
+  }
+  
+  /* Date box styling */
+  .ag-courses-item_date-box {
+    font-size: 18px; /* Font size for the date box */
+    color: #FFF; /* White text color */
+    z-index: 2; /* Ensure it's above other elements */
+    position: relative; /* Relative positioning */
+  }
+  
+  /* Date styling */
+  .ag-courses-item_date {
+    font-weight: bold; /* Bold text */
+    color: #f9b234; /* Highlight color for date */
+    transition: color .5s ease; /* Smooth color transition */
+  }
+  
+  /* Background circle styling */
+  .ag-courses-item_bg {
+    height: 128px; /* Height of the background circle */
+    width: 128px; /* Width of the background circle */
+    background-color: #f9b234; /* Default background color */
+    z-index: 1; /* Ensure it's below other content */
+    position: absolute; /* Absolute positioning */
+    top: -75px; /* Position circle above card */
+    right: -75px; /* Position circle to the right */
+    border-radius: 50%; /* Make it a circle */
+    transition: all .5s ease; /* Smooth transition for all properties */
+  }
+  
+  /* Different colors for different card items */
+  .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #3ecd5e;
+  }
+  
+  .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e44002;
+  }
+  
+  .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+    background-color: #952aff;
+  }
+  
+  .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+    background-color: #cd3e94;
+  }
+  
+  .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+    background-color: #4c49ea;
+  }
+  
+  /* Responsive design adjustments */
+  @media only screen and (max-width: 979px) {
+    .ag-courses_item {
+      flex-basis: calc(50% - 30px); /* Two cards per row on medium screens */
+    }
+    .ag-courses-item_title {
+      font-size: 24px; /* Smaller font size for the title */
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .ag-format-container {
+      width: 96%; /* Adjust container width for smaller screens */
+    }
+  }
+  
+  @media only screen and (max-width: 639px) {
+    .ag-courses_item {
+      flex-basis: 100%; /* Full-width cards on small screens */
+    }
+    .ag-courses-item_title {
+      min-height: 72px; /* Reduced minimum height */
+      line-height: 1; /* Adjust line height */
+      font-size: 24px; /* Smaller font size */
+    }
+    .ag-courses-item_link {
+      padding: 22px 40px; /* Adjust padding for small screens */
+    }
+    .ag-courses-item_date-box {
+      font-size: 16px; /* Smaller font size for the date box */
+    }
+  }
+  
